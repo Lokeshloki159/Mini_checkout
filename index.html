@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Checkout</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Mini Checkout</h1>
+    <p class="subtitle">Demo store · synthetic products · no real payments</p>
+  </header>
+
+  <main id="checkout-view">
+    <!-- Products -->
+    <section class="panel" aria-labelledby="products-heading">
+      <h2 id="products-heading">Products</h2>
+      <ul class="product-list" id="product-list">
+        <!-- rendered by app.js -->
+      </ul>
+    </section>
+
+    <!-- Cart -->
+    <section class="panel" aria-labelledby="cart-heading">
+      <h2 id="cart-heading">Your cart</h2>
+      <p id="cart-empty" class="muted" data-testid="cart-empty">Your cart is empty.</p>
+      <table id="cart-table" class="cart-table" hidden>
+        <thead>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col" class="num">Line total</th>
+            <th scope="col"><span class="visually-hidden">Remove</span></th>
+          </tr>
+        </thead>
+        <tbody id="cart-body"></tbody>
+        <tfoot>
+          <tr>
+            <th scope="row" colspan="3">Order total</th>
+            <td class="num" id="order-total" data-testid="order-total">₹0.00</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <!-- Checkout form -->
+    <section class="panel" aria-labelledby="details-heading">
+      <h2 id="details-heading">Your details</h2>
+      <form id="checkout-form" novalidate>
+        <div id="form-error" class="error-summary" role="alert" data-testid="form-error" hidden></div>
+
+        <label for="customer-name">Full name <span aria-hidden="true">*</span></label>
+        <input id="customer-name" name="customerName" type="text" autocomplete="name"
+               required aria-describedby="name-error">
+        <p id="name-error" class="field-error" data-testid="name-error" hidden></p>
+
+        <button id="place-order" type="submit" class="primary">Place order</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Confirmation -->
+  <section id="confirmation" class="panel confirmation" data-testid="confirmation"
+           tabindex="-1" aria-labelledby="confirm-heading" hidden>
+    <h2 id="confirm-heading">Order confirmed</h2>
+    <p>Thank you, <strong id="confirm-name"></strong>.</p>
+    <p>Order reference: <strong id="confirm-ref" data-testid="order-ref"></strong></p>
+    <p>Amount: <strong id="confirm-total" data-testid="confirm-total"></strong></p>
+    <button id="new-order" type="button">Start a new order</button>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

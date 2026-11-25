@@ -1,0 +1,17 @@
+﻿Run: 2026-11-25 10:27  |  Node v24.13.1  |  @playwright/test 1.65.1, Chromium
+
+
+Running 9 tests using 6 workers
+
+  ok 3 [chromium] › tests\edge-cases.spec.js:31:1 › empty cart and blank name together show both messages (912ms)
+  ok 4 [chromium] › tests\edge-cases.spec.js:39:1 › rapid double-click on Place order creates exactly one order (1.2s)
+  ok 1 [chromium] › tests\checkout.spec.js:68:1 › 3. changing quantity updates line totals and the exact order total (1.3s)
+  ok 6 [chromium] › tests\edge-cases.spec.js:14:1 › empty cart blocks checkout and keeps the typed name (1.2s)
+  ok 2 [chromium] › tests\checkout.spec.js:24:1 › 1. successful checkout shows one confirmation with a reference (1.3s)
+  ok 5 [chromium] › tests\checkout.spec.js:44:1 › 2. blank name blocks checkout, explains why and keeps the cart (1.3s)
+  ok 7 [chromium] › tests\edge-cases.spec.js:53:1 › two submits fired in the same instant still create one order (576ms)
+  ok 8 [chromium] › tests\edge-cases.spec.js:70:1 › starting a new order returns to a clean, usable checkout (621ms)
+  ok 9 [chromium] › tests\mobile.spec.js:10:1 › phone width: order total visible, correct, no sideways scrolling (568ms)
+
+  9 passed (3.6s)
+
